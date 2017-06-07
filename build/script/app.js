@@ -90,7 +90,7 @@
 /* 3 */
 /***/ (function(module, exports) {
 
-	module.exports = "<header class=\"header_mask\">\r\n\t<div class=\"header_search\">\r\n\t\t<input type=\"search\" name=\"\" id=\"\" value=\"\" />\r\n\t</div>\r\n</header>\r\n";
+	module.exports = "<div class=\"header_mask\"></div>\r\n<header>\r\n\t<div class=\"header_search\">\r\n\t\t<i></i>\r\n\t\t<input type=\"search\" name=\"\" id=\"\" value=\"\" placeholder=\"请输入你要搜索的内容\"/>\r\n\t</div>\r\n</header>\r\n";
 
 /***/ }),
 /* 4 */
@@ -102,7 +102,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "<footer>\r\n\t<ul>\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe69d;</span><span>购物车</span></a></li>\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\n\t</ul>\r\n</footer>\r\n";
+	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ }),
 /* 6 */

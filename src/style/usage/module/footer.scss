@@ -10,6 +10,21 @@
         @include flexbox();
         li{
             @include flex(1);
+            a{
+              @include flexbox();
+              @include flex-direction(column);
+              justify-content: center;
+              align-content: center;
+              span{
+                  text-align:ccenter; 
+                  &:first-child{
+                      text-align: center;
+                  }
+                  &:last-child{
+                      text-align: center;
+                  }
+              }  
+            }
         }
     }
 }
