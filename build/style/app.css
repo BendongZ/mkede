@@ -755,6 +755,7 @@ a {
     height: .45rem;
     width: 100%; }
     #header header .header_search {
+      position: relative;
       height: .27rem;
       width: 100%;
       margin: 0 auto;
@@ -767,10 +768,13 @@ a {
       display: flex;
       align-items: center; }
       #header header .header_search i {
-        height: 27px;
-        width: 27px;
+        height: .22rem;
+        width: .22rem;
         position: absolute;
-        z-index: 3; }
+        left: .35rem;
+        z-index: 3;
+        background: url(../images/icon_head.png) no-repeat 0.03rem -0.53rem;
+        background-size: 100%; }
       #header header .header_search input {
         width: 100%;
         display: inline;
@@ -841,10 +845,15 @@ a {
         -webkit-flex-direction: column;
         flex-direction: column;
         justify-content: center;
-        align-content: center; }
+        align-content: space-around;
+        color: #888; }
         #footer ul li a span {
           text-align: ccenter; }
           #footer ul li a span:first-child {
-            text-align: center; }
+            text-align: center;
+            font-size: .2rem;
+            height: .24rem; }
           #footer ul li a span:last-child {
             text-align: center; }
+        #footer ul li a.active {
+          color: #8ec31e; }

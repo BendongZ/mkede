@@ -20,6 +20,7 @@
         height: .45rem;
         width: 100%;
         .header_search{
+            position: relative;
             height: .27rem;
             width: 100%;
             margin: 0 auto;
@@ -28,13 +29,13 @@
             @include flexbox();
             align-items: center;
             i{
-                height: 27px;
-                width: 27px;
+                height: .22rem;
+                width: .22rem;
                 position: absolute;
+                left: .35rem;
                 z-index: 3;
-//              background: url(../images/icon_head.png) no-repeat 0 -100px;
-//              background-size: .27rem .27rem;
-//              background-size: 27px 27px;
+                background: url(../images/icon_head.png) no-repeat .03rem -.53rem;
+                background-size: 100%;
             }
             input{
                 width: 100%;
