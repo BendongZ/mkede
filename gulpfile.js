@@ -19,7 +19,7 @@ gulp.task('copyhtml',function(){
 gulp.task('webserver',function(){
 	gulp.src('./build/')
 	.pipe(webserver({
-		host:"localhost",
+		host:"192.168.191.1",
 		port:8000,
 		directoryListing:{
 			enable:true,
@@ -46,7 +46,7 @@ gulp.task('copy-libs',function(){
 })
 
 gulp.task('packcss',function(){
-	gulp.src('./src/style/usage/app.scss')
+	gulp.src('./src/style/usage/*.scss')
 	.pipe(sass().on('error',sass.logError))
 	.pipe(gulp.dest('./build/style'))
 })
