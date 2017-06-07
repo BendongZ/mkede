@@ -58,7 +58,7 @@
 	 * Created by zd on 2017/6/6.
 	 */
 	var app = __webpack_require__(2);
-	console.log(111);
+	console.log(888);
 
 
 
@@ -90,19 +90,19 @@
 /* 3 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"header_mask\"></div>\r\n<header>\r\n\t<div class=\"header_search\">\r\n\t\t<i></i>\r\n\t\t<input type=\"search\" name=\"\" id=\"\" value=\"\" placeholder=\"请输入你要搜索的内容\"/>\r\n\t</div>\r\n</header>\r\n";
+	module.exports = "<div class=\"header_mask\"></div>\r\n<header>\r\n\t<div class=\"header_search\">\r\n\t\t<!--<i class=\"yo-ico\">&#xe653;</i>-->\r\n\t\t<i></i>\r\n\t\t<input type=\"search\" name=\"\" id=\"\" value=\"\" placeholder=\"请输入你要搜索的内容\"/>\r\n\t</div>\r\n</header>\r\n";
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"m-index\">\r\n\t<div id=\"header\"></div>\r\n\t<section>\r\n\t\t<nav>\r\n\t\t\t<h1>10秒钟定制职位</h1>\r\n\t\t\t<div>去登录</div>\r\n\t\t</nav>\r\n\t\t<ul>\r\n\t\t\t\r\n\t\t</ul>\r\n\t</section>\r\n\t<div id=\"footer\"></div>\r\n</div>";
+	module.exports = "<div class=\"m-index\">\r\n\t<div id=\"header\"></div>\r\n\t<section>\r\n\t\t<nav>\r\n\t\t\t<h1>这是主要内容</h1>\r\n\t\t\t<div>哈哈哈</div>\r\n\t\t</nav>\r\n\t\t<ul>\r\n\t\t\t\r\n\t\t</ul>\r\n\t</section>\r\n\t<div id=\"footer\"></div>\r\n</div>";
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
+	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"###\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ }),
 /* 6 */

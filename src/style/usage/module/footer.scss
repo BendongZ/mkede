@@ -14,15 +14,21 @@
               @include flexbox();
               @include flex-direction(column);
               justify-content: center;
-              align-content: center;
+              align-content: space-around;
+              color: #888;
               span{
                   text-align:ccenter; 
                   &:first-child{
                       text-align: center;
+                      font-size: .2rem;
+                      height: .24rem;
                   }
                   &:last-child{
                       text-align: center;
                   }
+              }
+              &.active{
+                  color: #8ec31e;
               }  
             }
         }
