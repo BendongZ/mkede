@@ -1,0 +1,30 @@
+@charset "utf-8";
+#header{
+    height: .45rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .header_mask{
+        height: .45rem;
+        background-color: #141414;
+        opacity: .8;
+        .header_search{
+            height: .27rem;
+            margin: 0 auto .09rem;
+            padding: 0 .24rem 0 .42rem;
+            @include border-radius(.15rem);
+            background: url(../../../images/icon_head.png) no-repeat .12rem -.47rem;
+            @include flexbox();
+            align-items: center;
+            input{
+                width: 100%;
+                display: inline;
+                height: .27rem;
+                font-size: .14rem;
+                line-height: .27rem;
+                @include border-radius(.15rem);
+            }
+        }
+    }
+}

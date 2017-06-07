@@ -1,0 +1,15 @@
+@charset "utf-8";
+#footer{
+    height: .45rem;
+    width: 100%;
+    background-color: #fff;
+    box-shadow:0 -.04rem .04rem 0 #ccc;
+    ul{
+        height: .45rem;
+        width: 100%;
+        @include flexbox();
+        li{
+            @include flex(1);
+        }
+    }
+}
