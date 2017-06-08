@@ -58,14 +58,14 @@ gulp.task('copy-libs',function(){
 
 //编译scss文件
 gulp.task('packcss',function(){
-	gulp.src('./src/style/usage/app.scss')
+	gulp.src('./src/style/usage/*.scss')
 	.pipe(sass().on('error',sass.logError))
 	.pipe(gulp.dest('./build/style'))
 })
 
 //模块化处理js文件
 gulp.task('packjs',function(){
-	gulp.src('./src/script/app.js')
+	gulp.src(['./src/script/app.js','./src/script/app-classification.js'])
 	.pipe(named())
 	.pipe(webpack({
 		output:{
