@@ -58,7 +58,6 @@
 	 * Created by zd on 2017/6/6.
 	 */
 	var app = __webpack_require__(2);
-	console.log(888);
 
 
 
@@ -72,17 +71,15 @@
 	var headerTpl = __webpack_require__(3);
 	var homeTpl = __webpack_require__(4);
 	var footerTpl = __webpack_require__(5);
-
 	var commonUtil = __webpack_require__(6);
 
 
 	commonUtil.renderBody(homeTpl);
 	var header = document.getElementById("header");
-	//commonUtil.render($('#header'),headerTpl);
+	// commonUtil.render($('#header'),headerTpl);
 	commonUtil.render(header,headerTpl);
 	var footer = document.getElementById("footer");
 	commonUtil.render(footer,footerTpl);
-	console.log($('#header'));
 
 
 
