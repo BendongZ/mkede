@@ -12,3 +12,4 @@ commonUtil.render(header,headerTpl);
 var footer = document.getElementById("footer");
 commonUtil.render(footer,footerTpl);
 console.log($('#header'));
+console.log(IScroll);
