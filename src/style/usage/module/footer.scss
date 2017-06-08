@@ -2,6 +2,9 @@
 #footer{
     height: .45rem;
     width: 100%;
+    max-width:7.5rem;
+    min-width: 3.2rem;
+    margin: 0 auto;
     background-color: #fff;
     box-shadow:0 -.04rem .04rem 0 #ccc;
     ul{
