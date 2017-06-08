@@ -19,7 +19,7 @@ gulp.task('copyhtml',function(){
 gulp.task('webserver',function(){
 	gulp.src('./build/')
 	.pipe(webserver({
-		host:"192.168.191.1",
+		host:"localhost",
 		port:8000,
 		directoryListing:{
 			enable:true,
@@ -52,7 +52,7 @@ gulp.task('packcss',function(){
 })
 
 gulp.task('packjs',function(){
-	gulp.src('./src/script/app.js')
+	gulp.src(['./src/script/app.js','./src/script/app-classification.js'])
 	.pipe(named())
 	.pipe(webpack({
 		output:{
