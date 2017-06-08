@@ -1,6 +1,9 @@
 @charset "utf-8";
-
+$base-color:#888;
+a{
+    color: #888888;
+}
 @font-face {
   font-family: 'yofont';
-  src: url('/images/iconfont/iconfont.woff') format('woff'),url('/images/iconfont/iconfont.ttf') format('truetype'),
+  src: url('../images/iconfont/iconfont.woff') format('woff'),url('../images/iconfont/iconfont.ttf') format('truetype'),
 }
