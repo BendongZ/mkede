@@ -4,12 +4,11 @@
     width: 100%;
     min-width: 3.2rem;
     max-width: 7.5rem;
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 0;
-//  right: 50%;
-//  @include calc(margin-left,-50%);
-    z-index: 10;
+    left: 50%;
+    @include transform(translateX(-50%));
+    z-index: 100;
     background: transparent;
     .header_wrap{
         position: absolute;
@@ -17,6 +16,7 @@
         left: 0;
         width: 100%;
         background: transparent;
+        z-index: 101;
         .header_mask{
             height: .45rem;
             background-color: #141414;
@@ -28,6 +28,7 @@
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 102;
             height: .45rem;
             width: 100%;
             .header_search{
@@ -63,6 +64,31 @@
                     background-clip:border-box!important;           
                 }
                     
+            }
+            .header_other{
+                display: none;
+                position: relative;
+                height: .45rem;
+                width: 100%;
+                margin: 0 auto;
+                h3{
+                    text-align: center;
+                    font-size: .16rem;
+                    line-height: .45rem;
+                    color: #fff
+                }
+                a{
+                    position:absolute;
+                    left: .12rem;
+                    top: .03rem; 
+
+                    i{
+                        width: .14rem;
+                        height: .23rem;
+                        color: #fff;
+                        font-size: .25rem;
+                    }
+                }
             }
         }
     }

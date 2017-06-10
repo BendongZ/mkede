@@ -17,7 +17,7 @@ var  sass = require('gulp-sass');
 gulp.task('webserver',function(){
 	gulp.src('./build/')
 	.pipe(webserver({
-		host:"localhost",
+		host:"10.9.166.125",
 		port:8000,
 		directoryListing:{
 			enable:true,
@@ -58,14 +58,14 @@ gulp.task('copy-libs',function(){
 
 //编译scss文件
 gulp.task('packcss',function(){
-	gulp.src('./src/style/usage/app.scss')
+	gulp.src('./src/style/usage/*.scss')
 	.pipe(sass().on('error',sass.logError))
 	.pipe(gulp.dest('./build/style'))
 })
 
 //模块化处理js文件
 gulp.task('packjs',function(){
-	gulp.src('./src/script/app.js')
+	gulp.src(['./src/script/app.js','./src/script/app-classification.js','./src/script/login.js'])
 	.pipe(named())
 	.pipe(webpack({
 		output:{
