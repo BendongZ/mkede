@@ -14,6 +14,9 @@ var named = require('vinyl-named');
 var  sass = require('gulp-sass');
 
 //定义一个开启服务的任务
+//引入反向代理http-proxy-middleware
+var proxy = require('http-proxy-middleware');
+
 gulp.task('webserver',function(){
 	gulp.src('./build/')
 	.pipe(webserver({
@@ -23,7 +26,18 @@ gulp.task('webserver',function(){
 			enable:true,
 			path:'./build'
 		},
-		livereload:true
+		livereload:true,
+		middleware:[
+			//反向代理配置，
+			proxy('/mock',{
+				target:'http://localhost:9000/',//找数据地址
+				changeOrigin:true,//切换域名也能识别
+				pathRewrite:{//去掉mock
+					'^/mock':''
+				}
+			})
+		]
+
 	}))
 })
 
@@ -35,6 +49,7 @@ gulp.task('watch',function(){
 	gulp.watch('./src/style/usage/**/*.scss',['packcss'])
 	gulp.watch('./src/images/**/*',['copy-img'])
 })
+
 
 //拷贝HTML页面
 gulp.task('copyhtml',function(){
@@ -65,7 +80,7 @@ gulp.task('packcss',function(){
 
 //模块化处理js文件
 gulp.task('packjs',function(){
-	gulp.src(['./src/script/app.js','./src/script/app-classification.js'])
+	gulp.src(['./src/script/app.js','./src/script/app-classification.js','./src/script/login.js'])
 	.pipe(named())
 	.pipe(webpack({
 		output:{
@@ -90,4 +105,4 @@ gulp.task('packjs',function(){
 })
 
 //定义默认任务
-gulp.task('default',['copyhtml','webserver','watch'],function(){})
+gulp.task('default',['copyhtml','webserver','packjs','packcss','copy-img','copy-libs','watch'],function(){})
