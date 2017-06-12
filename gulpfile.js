@@ -62,7 +62,7 @@ gulp.task('packcss',function(){
 })
 
 gulp.task('packjs',function(){
-	gulp.src(['./src/script/app.js','./src/script/app-classification.js'])
+	gulp.src('./src/script/*.js')
 	.pipe(named())
 	.pipe(webpack({
 		output:{

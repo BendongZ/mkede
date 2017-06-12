@@ -1,0 +1,21 @@
+@charset "UTF-8";
+#header_list_box{
+	.header_list{
+	@include flexbox();
+	@include flex-direction(column);
+	.head_list_title{
+		height: .45rem;
+		line-height: .45rem;
+		background: #141414;
+		color: #ccc;
+		.back{
+			display: block;
+			width: 30px;
+			height: 30px;
+			background: url(../images/icon_head.png) no-repeat;
+			background-position: 10px 10px;
+		}
+
+	}
+}
+}
