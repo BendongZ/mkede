@@ -69,20 +69,34 @@
 	/*** IMPORTS FROM imports-loader ***/
 
 
-	var common = {
-		renderBody:function(tpl){
-	//		$('body').html(tpl+$('body').html());
-			var body = document.body;
-			body.innerHTML = tpl + body.innerHTML;
-		},
-		render:function(obj,tpl){
-	//		obj.html(tpl+obj.html());
-			obj.innerHTML = tpl + obj.innerHTML;
-		}
+	// var common = {
+	// 	renderBody:function(tpl){
+	// //		$('body').html(tpl+$('body').html());
+	// 		var body = document.body;
+	// 		body.innerHTML = tpl + body.innerHTML;
+	// 	},
+	// 	render:function(obj,tpl){
+	// //		obj.html(tpl+obj.html());
+	// 		obj.innerHTML = tpl + obj.innerHTML;
+	// 	}
+	// }
+
+	// module.exports = common;
+	//单例模式,公共工具
+	var common = {//封装
+	  renderBody:function(tpl){//tpl模板，方法 ，render翻译提供
+	    // var body = document.body;
+	    // body.innerHTML=tpl+body.innerHTML;
+	   // var $body=$(body);
+	    //$(body).html(tpl+$body.html())
+	    $('body').prepend(tpl)
+	  },
+	  render: function(obj,tpl){//第一个参数：对象，在那个对象上用
+	    $(obj).html(tpl)
+
+	  }
 	}
-
-	module.exports = common;
-
+	module.exports = common
 
 
 /***/ }),
@@ -92,7 +106,7 @@
 	/*** IMPORTS FROM imports-loader ***/
 
 
-	 var app2 = __webpack_require__(8);
+	 var app = __webpack_require__(8);
 
 
 
@@ -110,20 +124,54 @@
 
 
 	commonUtil.renderBody(menuTpl);
-	var header = document.getElementById("header");
-	// commonUtil.render($('#header'),headerTpl);
-	commonUtil.render(header,headerTpl);
-	var footer = document.getElementById("footer");
-	commonUtil.render(footer,footerTpl);
+	commonUtil.render($('#header'),headerTpl);
+	commonUtil.render($('#footer'),footerTpl);
 	// console.log($('#header'));
+	//console.log(0);
+	//ajax请求数据
+	//https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png
+	var isShow =true;
+	var html=template('menulist',{show:isShow});
+	$('.menu_list').html(html);
+	$.ajax({
+		url:'./mock/listmore',
+		success:function(res){
+			var dataSource = res.content.data.page;
+			dataSource['show']=!isShow;
+			 var html=template('menulist',dataSource);
+			$('.menu_list').html(html);
 
+		}
+	})
+
+	// $.ajax({
+	//         url: './mock/listmore',
+	//         success: function(res) {
+	//             var str = '';
+	//             var dataSource=res.content.data.page.result;
+	//             for(var i=0;i<dataSource.length;i++){
+	//              str +='<li>\
+	//              <div><img src="//www.lgstatic.com/'+dataSource[i].companyLogo+'" /></div>\
+	//              <div>\
+	//                  <h2>'+dataSource[i].companyName+'</h2>\
+	//                  <p>'+dataSource[i].positionName+'</p>\
+	//                  <span>'+dataSource[i].createTime+'0</span>\
+	//              </div>\
+	//              <div>'+dataSource[i].salary+'</div>\
+	//          </li>';
+	//             }
+	//             $('.m-index section ul').html(str)
+	            
+	//                   //console.log(str);
+	//         }
+	//     })
 
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"m-index\">\r\n\t<div id=\"header\"></div>\r\n\t<section>\r\n    <div id=\"menu\">\r\n      <ul class=\"menu_list\">\r\n        <li><a href=\"\">\r\n      <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n      \" alt=\"\"></i>\r\n      <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>\r\n\r\n\r\n    <li><a href=\"\">\r\n    <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n    \" alt=\"\"></i>\r\n    <p>透明隐形眼镜</p>\r\n    </a>\r\n\r\n    </li>    <li><a href=\"\">\r\n        <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png\r\n        \" alt=\"\"></i>\r\n        <p>透明隐形眼镜</p>\r\n        </a>\r\n\r\n        </li>\r\n    </ul></div>\r\n\t</section>\r\n\t<div id=\"footer\"></div>\r\n</div>\r\n";
+	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header\"></div>\r\n    <section>\r\n   \r\n        <div id=\"menu\"> \r\n      \r\n            <ul class=\"menu_list\">\r\n                 <script type=\"text/html\" id=\"menulist\"> \r\n        {{if show}}\r\n                    <div class=\"yo-modal\">\r\n                        <div class=\"cont\">\r\n                            <div class=\"yo-loading\">\r\n                                <i class=\"yo-ico\"></i>\r\n                                <div class=\"text\">加载中...</div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    {{/if}} \r\n                    {{if !show}} \r\n                    \r\n                    {{each result}}\r\n                    <li>\r\n                        <a href=\"\">\r\n                            <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/{{$value.companyLogo}}\" alt=\"\"></i>\r\n                            <p>{{$value.positionName}}</p>\r\n                        </a>\r\n                    </li>\r\n                    {{/each}}  {{/if}}  </script>             \r\n            </ul>\r\n           \r\n\r\n        </div>\r\n      \r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>\r\n";
 
 /***/ })
 /******/ ]);
