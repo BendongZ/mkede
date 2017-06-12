@@ -1,0 +1,152 @@
+@charset "utf-8";
+.m-index {
+    section {
+        overflow: hidden;
+        padding-bottom: .8rem;
+        .banner {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        #login_form {
+            div {
+                margin: 0 .1rem;
+                @include border(0 0 1px 0, #dcdcdc);
+                position: relative;
+                @include flexbox();
+                align-items: center;
+                input {
+                    @include flex(1);
+                    padding-left: .1rem;
+                    font-size: .15rem;
+                    border: 0;
+                    height: 100%;
+                }
+            }
+            .login_info {
+                height: .5rem;
+                label {
+                    text-align: center;
+                    width: .55rem;
+                    font-size: .18rem;
+                    color: #000;
+                }
+            }
+            .err_tips {
+                margin-top: .1rem;
+                @include border(0 0 0 0);
+                margin-left: .19rem;
+                color: #ff7b7c;
+            }
+            div.login_btn {
+                height: .5rem;
+                margin: .2rem .1rem 0 .1rem;
+                min-height: .5rem;
+                font-size: .14rem;
+                @include border(0);
+                input {
+                    @include border-radius(.05rem);
+                }
+                &:nth-of-type(4) {
+                    #login {
+                        color: #fff;
+                        padding-left: 0;
+                        background-color: #8fc320;
+                    }
+                }
+                &:nth-of-type(5) {
+                    #register {
+                        color: #8fc320;
+                        padding-left: 0;
+                        background-color: #fff;
+                        border: solid 1px #8fc320;
+                    }
+                }
+            }
+            .forget_code {
+                margin: .1rem .1rem 0 .1rem;
+                @include border(0);
+                justify-content: flex-end;
+                a {
+                    margin-right: .1rem;
+                    font-size: .14rem;
+                    color: #888;
+                    span{
+                        @include border(1px, #8fc320);
+                        font-size: 0.1rem;
+                        vertical-align: middle;
+                        display: inline-block;
+                        height: .18rem;
+                        margin-right: .04rem;
+                        text-align: center;
+                        width: .18rem;
+                        color: #8fc320;
+                    }
+                    ::after{
+                        @include border-radius(.18rem);
+                    }
+                }
+            }
+            .login_footer{
+                margin: .4rem .1rem 0 .1rem;
+                overflow: hidden;
+                @include border(0);
+                @include flexbox();
+                @include flex-direction(column);
+                h3{
+                    position: relative;
+                    font-size: .14rem;
+                    font-weight: normal;
+                    text-align: center;
+                    width: 100%;
+                    color: #888;
+                    overflow:hidden; 
+                    &::before{
+                        @include border(1px 0 0 0,#ccc);
+                        border-top: solid 1px #ccc;
+                        display: block;
+                        width: 45%;
+                        content: "";
+                        position: absolute;
+                        top: .1rem;
+                        right: -.32rem;
+                    }
+                    &::after{
+                        @include border(1px 0 0 0,#ccc);
+                        border-top: solid 1px #ccc;
+                        display: block;
+                        width: 45%;
+                        content: "";
+                        position: absolute;
+                        top: .1rem;
+                        left: -0.32rem;
+                    }
+                }
+                p{
+                    margin-top: .2rem;
+                    text-align: center;
+                    width: 100%;
+                    a{
+                        background: url("/images/thirdpartylogo.png") 0px;
+                        display: inline-block;
+                        width: .5rem;
+                        height: .5rem;
+                        margin: 0 .15rem;
+                        @include background-size(.5rem auto);
+                        background-repeat: no-repeat;
+                        &:nth-of-type(1){
+                            background-position: 0 -.01rem;
+                        }
+                        &:nth-of-type(2){
+                            background-position: 0 -.52rem;
+                        }
+                        &:nth-of-type(3){
+                            background-position: 0 -1.03rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

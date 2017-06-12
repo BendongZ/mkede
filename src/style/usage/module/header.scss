@@ -2,56 +2,94 @@
 #header{
     height: .45rem;
     width: 100%;
+    min-width: 3.2rem;
+    max-width: 7.5rem;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+    z-index: 100;
     background: transparent;
-    .header_mask{
-        height: .45rem;
-        background-color: #141414;
-        opacity: .8;
-    }
-    header{
-        @include flexbox();
-        align-items: center;
+    .header_wrap{
         position: absolute;
         top: 0;
         left: 0;
-        height: .45rem;
         width: 100%;
-        .header_search{
-            position: relative;
-            height: .27rem;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 .24rem 0 .24rem;
-            @include border-radius(.15rem);
+        background: transparent;
+        z-index: 101;
+        .header_mask{
+            height: .45rem;
+            background-color: #141414;
+            opacity: .8;
+        }
+        header{
             @include flexbox();
             align-items: center;
-            i{
-                height: .22rem;
-                width: .22rem;
-                position: absolute;
-                left: .35rem;
-                z-index: 3;
-                background: url(../images/icon_head.png) no-repeat .03rem -.53rem;
-                background-size: 100%;
-            }
-            input{
-                width: 100%;
-                display: inline;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 102;
+            height: .45rem;
+            width: 100%;
+            .header_search{
+                position: relative;
                 height: .27rem;
-                font-size: .14rem;
-                line-height: .27rem;
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 .24rem 0 .24rem;
                 @include border-radius(.15rem);
-                @include border(0);
-                border: none;
-                font-weight: 700;
-                padding-left: .42rem;
-                padding-right: .24rem;
-                background-clip:border-box!important;           
+                @include flexbox();
+                align-items: center;
+                i{
+                    height: .22rem;
+                    width: .22rem;
+                    position: absolute;
+                    left: .35rem;
+                    z-index: 3;
+                    background: url(../images/icon_head.png) no-repeat .03rem -.53rem;
+                    background-size: 100%;
+                }
+                input{
+                    width: 100%;
+                    display: inline;
+                    height: .27rem;
+                    font-size: .14rem;
+                    line-height: .27rem;
+                    @include border-radius(.15rem);
+                    @include border(0);
+                    border: none;
+                    font-weight: 700;
+                    padding-left: .42rem;
+                    padding-right: .24rem;
+                    background-clip:border-box!important;           
+                }
+                    
             }
-                
+            .header_other{
+                display: none;
+                position: relative;
+                height: .45rem;
+                width: 100%;
+                margin: 0 auto;
+                h3{
+                    text-align: center;
+                    font-size: .16rem;
+                    line-height: .45rem;
+                    color: #fff
+                }
+                a{
+                    position:absolute;
+                    left: .12rem;
+                    top: .03rem; 
+
+                    i{
+                        width: .14rem;
+                        height: .23rem;
+                        color: #fff;
+                        font-size: .25rem;
+                    }
+                }
+            }
         }
     }
 }

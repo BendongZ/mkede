@@ -22,7 +22,6 @@ var common = {//封装
   },
   render: function(obj,tpl){//第一个参数：对象，在那个对象上用
     $(obj).html(tpl)
-
   }
 }
 module.exports = common

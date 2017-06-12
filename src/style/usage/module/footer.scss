@@ -2,6 +2,9 @@
 #footer{
     height: .45rem;
     width: 100%;
+    max-width:7.5rem;
+    min-width: 3.2rem;
+    margin: 0 auto;
     background-color: #fff;
     box-shadow:0 -.04rem .04rem 0 #ccc;
     ul{
@@ -10,14 +13,27 @@
         @include flexbox();
         li{
             @include flex(1);
+            position: relative;
             a{
               @include flexbox();
               @include flex-direction(column);
+              height: .45rem;
               justify-content: center;
               align-content: space-around;
               color: #888;
+              i{
+                  position: absolute;
+                  font-size: .1rem;
+                  background: #ff7c7c;
+                  padding: 0 .05rem;
+                  @include border-radius(.08rem);
+                  top: .05rem;
+                  left: 50%;
+                  margin-left: .04rem;
+                  color: #FFFFFF;
+              }
               span{
-                  text-align:ccenter; 
+                  text-align:center; 
                   &:first-child{
                       text-align: center;
                       font-size: .2rem;
@@ -29,6 +45,9 @@
               }
               &.active{
                   color: #8ec31e;
+              }
+              .car{
+                  height: .24rem;
               }  
             }
         }

@@ -3,12 +3,9 @@ var menuTpl = require('../tpls/menu.html');
 var footerTpl = require('../tpls/footer.html');
 var commonUtil = require('../utils/common.js');
 
-
 commonUtil.renderBody(menuTpl);
 commonUtil.render($('#header'),headerTpl);
 commonUtil.render($('#footer'),footerTpl);
-// console.log($('#header'));
-//console.log(0);
 //ajax请求数据
 //https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png
 var isShow =true;
