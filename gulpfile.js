@@ -20,7 +20,7 @@ var proxy = require('http-proxy-middleware');
 gulp.task('webserver',function(){
 	gulp.src('./build/')
 	.pipe(webserver({
-		host:"10.9.166.125",
+		host:"localhost",
 		port:8000,
 		directoryListing:{
 			enable:true,
