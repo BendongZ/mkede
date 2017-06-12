@@ -716,7 +716,8 @@ html {
   box-sizing: border-box; }
 
 body {
-  font-size: .14rem; }
+  font-size: .14rem;
+  background: #fff; }
 
 @font-face {
   font-family: 'yofont';
@@ -727,7 +728,11 @@ body {
   height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
   .m-index section {
     margin: 0 auto;
     width: 100% !important;
@@ -739,7 +744,8 @@ body {
     width: .1px;
     overflow: hidden;
     background-color: #fff;
-    z-index: 0; }
+    z-index: 0;
+    margin-bottom: .05rem; }
 
 #header {
   height: .45rem;

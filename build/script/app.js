@@ -131,7 +131,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
+	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ }),
 /* 6 */
@@ -140,18 +140,6 @@
 	/*** IMPORTS FROM imports-loader ***/
 
 
-<<<<<<< HEAD
-	var common = {
-		renderBody:function(tpl){
-			$('body').prepend(tpl);
-			// var body = document.body;
-			// body.innerHTML = tpl + body.innerHTML;
-		},
-		render:function($obj,tpl){
-			$obj.html(tpl);
-			// obj.innerHTML = tpl + obj.innerHTML;
-		}
-=======
 	// var common = {
 	// 	renderBody:function(tpl){
 	// //		$('body').html(tpl+$('body').html());
@@ -176,9 +164,7 @@
 	  },
 	  render: function(obj,tpl){//第一个参数：对象，在那个对象上用
 	    $(obj).html(tpl)
-
 	  }
->>>>>>> zhang
 	}
 	module.exports = common
 
