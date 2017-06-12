@@ -1,4 +1,6 @@
-
+@charset "UTF-8";
+@import "../../lib/element/yo-loading";
+@include yo-loading();
 #menu{
 
 padding-top: .45rem;
@@ -13,7 +15,7 @@ width: 100%;
   li{
     width: 50%;
     float: left;
-    @include border(0 0 2px 0);
+    @include border(0 0 1px 0);
     a{
       padding: .15rem 0;
       display: block;
@@ -31,7 +33,7 @@ width: 100%;
     }
   }
   li:nth-child(2n+1){
-        @include border(0 2px 2px 0);
+        @include border(0 1px 1px 0);
   }
 }
 }

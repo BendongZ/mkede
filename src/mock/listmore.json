@@ -1,0 +1,74 @@
+{
+    "content": {
+        "data": {
+            "isLogin": false,
+            "page": {
+                "pageSize": 15,
+                "start": "15",
+                "result": [{
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "透明隐形眼镜",
+                    "companyLogo": "894fb563-fcf0-4bd9-b304-eed7f37eec8e.png"                
+                },
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "彩色隐形眼镜",
+                    "companyLogo": "712647ef-2dc5-4333-8cc9-4cddac588a14.png"                
+                }
+                ,
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "护理用品",
+                    "companyLogo": "97a4d65d-7b4b-4cb2-b87b-fcfbf8ff8354.png"                
+                }
+                ,
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "近视眼镜",
+                    "companyLogo": "1be03aaa-b8d7-4591-ad52-629a43462f1a.png"                
+                }
+                ,
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "太阳眼镜",
+                    "companyLogo": "89bb74d4-3b5c-46df-84fa-4fb6d80885d6.png"                
+                }
+                ,
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "功能眼镜",
+                    "companyLogo": "72f99ff8-e27a-4cf0-a7ae-e91948aecf3c.png"                
+                }
+
+                ,
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "个人护理",
+                    "companyLogo": "edadc740-ebf6-439c-8460-9170e0d6a648.png"                
+                }
+
+                ,
+                {
+                    "logger": { "traceCapable": true, "name": "com.lagou.entity.mobile.MobilePosition" },
+                    "positionId": 2520682,
+                    "positionName": "时尚彩妆",
+                    "companyLogo": "207d7e5a-8ef8-492a-8c89-86285564660a.png"                
+                }
+
+            ],
+                "totalCount": "242615",
+                "pageNo": 2
+            }
+        },
+        "rows": []
+    },
+    "message": "第2页数据,每页15条, 查询成功!",
+    "state": 1
+}
