@@ -39,7 +39,7 @@ $.ajax({
 //          </li>';
 //             }
 //             $('.m-index section ul').html(str)
-            
+
 //                   //console.log(str);
 //         }
 //     })

@@ -1,21 +1,61 @@
 @charset "UTF-8";
 #header_list_box{
-	.header_list{
-	@include flexbox();
-	@include flex-direction(column);
+	width:100%;
+	#header_list{
+	width:100%;
 	.head_list_title{
 		height: .45rem;
 		line-height: .45rem;
-		background: #141414;
+		background: rgba(0,0,0,.8);
 		color: #ccc;
+			@include flexbox();
 		.back{
-			display: block;
-			width: 30px;
-			height: 30px;
-			background: url(../images/icon_head.png) no-repeat;
-			background-position: 10px 10px;
+			display: inline-block;
+			width: .45rem;
+			height: .45rem;
+			background: url(../images/back.png) no-repeat;
+			background-position: center;
+		}
+		h1{
+			@include flex(1);
+			text-align:center;
+		}
+		.shaixuan{
+			width:.5rem;
+			height:100%;
+			display:inline-block;
+			text-align:center;
 		}
 
+	}
+	.head_list_select{
+		height:.4rem;
+		line-height:.4rem;
+		width:100%;
+		color:#888;
+		@include flexbox();
+			@include border(0 0 1px 0 ) ;
+		li{
+			@include flex(1);
+			text-align:center;
+
+		}
+		  .active{
+		    color:#8ec31f;
+		  }
+			.sanjiao{
+				display:inline-block;
+				width:0;
+				height:0;
+				border-left:.06rem solid transparent ;
+				border-right:.06rem solid transparent;
+				border-top:.06rem solid  #8ec31f;
+					border-bottom:0rem solid  transparent;
+					margin-left:.05rem;
+					transition:all .1s .1s linear;
+					transform-origin:top top;
+					  transform:rotate(0deg);
+			}
 	}
 }
 }

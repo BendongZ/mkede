@@ -11,99 +11,107 @@ var webpack = require('gulp-webpack');
 var named = require('vinyl-named');
 
 //引入gulp-sass的包
-var  sass = require('gulp-sass');
+var sass = require('gulp-sass');
 
 //定义一个开启服务的任务
 //引入反向代理http-proxy-middleware
 var proxy = require('http-proxy-middleware');
 
-gulp.task('webserver',function(){
-	gulp.src('./build/')
-	.pipe(webserver({
-		host:"localhost",
-		port:8000,
-		directoryListing:{
-			enable:true,
-			path:'./build'
-		},
-		livereload:true,
-		middleware:[
-			//反向代理配置，
-			proxy('/mock',{
-				target:'http://localhost:9000/',//找数据地址
-				changeOrigin:true,//切换域名也能识别
-				pathRewrite:{//去掉mock
-					'^/mock':''
-				}
-			})
-		]
+gulp.task('webserver', function() {
+    gulp.src('./build/')
+        .pipe(webserver({
+            host: "localhost",
+            port: 8000,
+            directoryListing: {
+                enable: true,
+                path: './build'
+            },
+            livereload: true,
+            middleware: [
+                //反向代理配置，
+                proxy('/mock', {
+                    target: 'http://localhost:9000/', //找数据地址
+                    changeOrigin: true, //切换域名也能识别
+                    pathRewrite: { //去掉mock
+                        '^/mock': ''
+                    }
+                }),
+                //反向代理配置，
+                proxy('/mock', {
+                    target: 'http://localhost:9000/', //找数据地址
+                    changeOrigin: true, //切换域名也能识别
+                    pathRewrite: { //去掉mock
+                        '^/mock': ''
+                    }
+                })
+            ]
 
-	}))
+        }))
 })
 
-//观测文件的变化，然后去执行相应的任务
-gulp.task('watch',function(){
-	gulp.watch('./src/*.html',['copyhtml'])
-	gulp.watch('./src/script/**/*.js',['packjs'])
-	gulp.watch('./src/script/**/*.html',['packjs'])
-	gulp.watch('./src/style/usage/**/*.scss',['packcss'])
-	gulp.watch('./src/images/**/*',['copy-img'])
-})
 
 
 //拷贝HTML页面
-gulp.task('copyhtml',function(){
-	gulp.src('./src/*.html').pipe(gulp.dest('./build/'))
+gulp.task('copyhtml', function() {
+    gulp.src('./src/*.html').pipe(gulp.dest('./build/'))
 })
 
 //拷贝css样式
-gulp.task('copycss',function(){
-	gulp.src('./src/style/swiper.min.css').pipe(gulp.dest('./build/style/'))
+gulp.task('copycss', function() {
+    gulp.src('./src/style/swiper.min.css').pipe(gulp.dest('./build/style/'))
 })
 
 //拷贝图片资源
-gulp.task('copy-img',function(){
-	gulp.src('./src/images/**/*').pipe(gulp.dest('./build/images'))
+gulp.task('copy-img', function() {
+    gulp.src('./src/images/**/*').pipe(gulp.dest('./build/images'))
 })
 
 //拷贝libs目录下的js
-gulp.task('copy-libs',function(){
-	gulp.src('./src/script/libs/*').pipe(gulp.dest('./build/script/libs'))
+gulp.task('copy-libs', function() {
+    gulp.src('./src/script/libs/*').pipe(gulp.dest('./build/script/libs'))
 })
 
 //编译scss文件
-gulp.task('packcss',function(){
-	gulp.src('./src/style/usage/*.scss')
-	.pipe(sass().on('error',sass.logError))
-	.pipe(gulp.dest('./build/style'))
+gulp.task('packcss', function() {
+    gulp.src(['./src/style/usage/module/*.scss', './src/style/usage/*.scss'])
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./build/style'))
 })
 
 //模块化处理js文件
-gulp.task('packjs',function(){
-	gulp.src('./src/script/*.js')
+gulp.task('packjs', function() {
+        gulp.src('./src/script/*.js')
 
-	.pipe(named())
-	.pipe(webpack({
-		output:{
-			filename:'[name].js'
-		},
-		module:{
-			loaders:[
-				{
-					test:/\.js$/,
-					loader:'imports-loader',
-					exclude:'./node_modules'
-				},
-				{
-					test:/\.html/,
-					loader:'html-loader',
-					exclude:'./node_modules'
-				}
-			]
-		}
-	}))
-	.pipe(gulp.dest('./build/script/'))
+        .pipe(named())
+            .pipe(webpack({
+                output: {
+                    filename: '[name].js'
+                },
+                module: {
+                    loaders: [{
+                            test: /\.js$/,
+                            loader: 'imports-loader',
+                            exclude: './node_modules'
+                        },
+                        {
+                            test: /\.html/,
+                            loader: 'html-loader',
+                            exclude: './node_modules'
+                        }
+                    ]
+                }
+            }))
+            .pipe(gulp.dest('./build/script/'))
+    })
+    //观测文件的变化，然后去执行相应的任务
+gulp.task('watch', function() {
+    gulp.watch('./src/*.html', ['copyhtml'])
+    gulp.watch('./src/script/**/*.js', ['packjs'])
+    gulp.watch('./src/script/**/*.html', ['packjs'])
+    gulp.watch('./src/style/usage/module/*.scss', ['packcss'])
+    gulp.watch('./src/style/usage/*.scss', ['packcss'])
+    gulp.watch('./src/images/**/*', ['copy-img'])
 })
 
 //定义默认任务
-gulp.task('default',['copyhtml','webserver','packjs','packcss','copy-img','copy-libs','watch'],function(){})
+gulp.task('default', ['copyhtml', 'webserver', 'watch'], function() {})

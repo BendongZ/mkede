@@ -44,7 +44,7 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(10);
+	module.exports = __webpack_require__(14);
 
 
 /***/ }),
@@ -55,7 +55,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"###\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
+	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ }),
 /* 6 */
@@ -88,7 +88,6 @@
 	  },
 	  render: function(obj,tpl){//第一个参数：对象，在那个对象上用
 	    $(obj).html(tpl)
-
 	  }
 	}
 	module.exports = common
@@ -98,45 +97,89 @@
 /* 7 */,
 /* 8 */,
 /* 9 */,
-/* 10 */
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*** IMPORTS FROM imports-loader ***/
 
 
-	var app = __webpack_require__(11);
+	var app = __webpack_require__(15);
 
 
 /***/ }),
-/* 11 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*** IMPORTS FROM imports-loader ***/
 
 
-	var headerlistTpl = __webpack_require__(12);
-	var menuTpl = __webpack_require__(13);
+	var headerlistTpl = __webpack_require__(16);
+	var menuTpl = __webpack_require__(17);
 	var footerTpl = __webpack_require__(5);
 	var commonUtil = __webpack_require__(6);
-
-
 
 	commonUtil.renderBody(menuTpl);
 	commonUtil.render($('#header_list_box'),headerlistTpl);
 	commonUtil.render($('#footer'),footerTpl);
 
+	//ajax请求数据
+	//https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png
+	var isShow =true;
+	var html=template('godList',{show:isShow});
+	$('#god_menu').html(html);
+	$.ajax({
+	    url: './mock/godmore',
+	    success: function(res) {
+	        var dataSource = res.content.data.page; //去掉result
+	        dataSource['show']=!isShow;
+	        var html = template('godList', dataSource) //dataSource对象
+	        $('#god_menu').html(html)
+	    }
+	})
+	var shang=true;
+	$('.head_list_select li').each(function(index){
+	  $(this).on('click',function(e){
+	    e.preventDefault();
+	    $(this).find('a').addClass('active').parent('li').siblings('li').find('a').removeClass('active');
+
+	  })
+
+	})
+	$('.price').on('click',function(){
+
+	  if(shang){
+	    $('.sanjiao').css({
+
+	            "transform":"rotate(180deg)"
+
+	    })
+	    shang=false
+	  }else{
+	    $('.sanjiao').css({
+	    "transform":"rotate(0deg)"
+	      })
+
+	      shang=true
+	  }
+	})
+
+
 
 /***/ }),
-/* 12 */
+/* 16 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div id=\"header_list\">\r\n\t<div class=\"head_list_title\">\r\n\t\t<a href=\"\" class=\"back\"></a>\r\n\t\t<h1>彩色隐形眼镜</h1>\r\n\t\t<span><a href=\"\">筛选</a></span>\r\n\t</div>\r\n\t<ul class=\"head_list_select\"></ul>\r\n</div>";
+	module.exports = "<div id=\"header_list\">\r\n\t<div class=\"head_list_title\">\r\n\t\t<a href=\"\" class=\"back\"></a>\r\n\t\t<h1>彩色隐形眼镜</h1>\r\n\t\t<span class=\"shaixuan\"><a href=\"\">筛选</a></span>\r\n\t</div>\r\n\t<ul class=\"head_list_select\">\r\n\t\t<li class=\"active\"><a href=\"\">综合</a></li>\r\n\t\t<li><a href=\"\">销量</a></li>\r\n\t\t<li class=\"price\"><a href=\"\">价格<i class=\"sanjiao\"></i></a></li>\r\n\t</ul>\r\n</div>\r\n";
 
 /***/ }),
-/* 13 */
+/* 17 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header_list_box\"></div>\r\n    <section>\r\n   \r\n        <div id=\"menu\"> \r\n      \r\n            <ul class=\"menu_list\">\r\n                 <script type=\"text/html\" id=\"menulist\"> \r\n        {{if show}}\r\n                    <div class=\"yo-modal\">\r\n                        <div class=\"cont\">\r\n                            <div class=\"yo-loading\">\r\n                                <i class=\"yo-ico\"></i>\r\n                                <div class=\"text\">加载中...</div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    {{/if}} \r\n                    {{if !show}} \r\n                    \r\n                    {{each result}}\r\n                    <li>\r\n                        <a href=\"\">\r\n                            <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/{{$value.companyLogo}}\" alt=\"\"></i>\r\n                            <p>{{$value.positionName}}</p>\r\n                        </a>\r\n                    </li>\r\n                    {{/each}}  {{/if}}  </script>             \r\n            </ul>\r\n           \r\n\r\n        </div>\r\n      \r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>\r\n";
+	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header_list_box\"></div>\r\n    <section>\r\n<div id=\"list_menu\">\r\n   <ul id =\"god_menu\">\r\n     <script  id=\"godList\" type=\"text/html\">\r\n           {{if show}}\r\n                       <div class=\"yo-modal\">\r\n                           <div class=\"cont\">\r\n                               <div class=\"yo-loading\">\r\n                                   <i class=\"yo-ico\"></i>\r\n                                   <div class=\"text\">加载中...</div>\r\n                               </div>\r\n                           </div>\r\n                       </div>\r\n            {{/if}}\r\n            {{if !show}}\r\n                {{each result}}\r\n                         <li>\r\n                           <a href=\"\">\r\n                             <img class=\"god_img\" src=\"https://pic.keede.com/Main/{{$value.companyLogo}}\" alt=\"\">\r\n                             <p class=\"god_name\">{{$value.positionName}}</p>\r\n                             <span class=\"god_price\">{{$value.godPrice}}</span>\r\n                            </a>\r\n                           </li>\r\n       {{/each}}\r\n\r\n        {{/if}}\r\n</script>\r\n     </ul>\r\n</div>\r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>\r\n";
 
 /***/ })
 /******/ ]);

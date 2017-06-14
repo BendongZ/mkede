@@ -1,0 +1,49 @@
+@charset "UTF-8";
+#header_car_box {
+    width: 100%;
+    #header_car {
+        width: 100%;
+        @include border(0 0 10px 0, #eee);
+        .head_list_title {
+            height: .45rem;
+            line-height: .45rem;
+            background: rgba(0, 0, 0, .8);
+            color: #ccc;
+            @include flexbox();
+            .back {
+                display: inline-block;
+                width: .45rem;
+                height: .45rem;
+                background: url(../images/back.png) no-repeat;
+                background-position: center;
+            }
+            h1 {
+                @include flex(1);
+                text-align: center;
+            }
+            .shaixuan {
+                width: .5rem;
+                height: 100%;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+        .header_gundong {
+            height: .54rem;
+            line-height: .54rem;
+            width: 100%;
+            color: #8ec31f;
+            @include flexbox();
+            @include border(0 0 1px 0);
+            font-size: .16rem;
+            i {
+                display: inline-block;
+                width: .22rem;
+                height: .20rem;
+                background: url(../images/icon_cart.png) no-repeat center;
+                background-position: 0px -37px;
+                background-size: .7rem auto;
+            }
+        }
+    }
+}
