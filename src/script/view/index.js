@@ -3,14 +3,13 @@ var homeTpl = require('../tpls/home.html');
 var footerTpl = require('../tpls/footer.html');
 var commonUtil = require('../utils/common.js');
 
-
 commonUtil.renderBody(homeTpl);
-// var header = document.getElementById("header");
-// commonUtil.render($('#header'),headerTpl);
 commonUtil.render($("#header"),headerTpl);
-// var footer = document.getElementById("footer");
 commonUtil.render($("#footer"),footerTpl);
-
+$('#header .header_search').css("display", "block");
+$('#header .header_other').css("display", "none");
+commonUtil.addLink();
+commonUtil.setActive();
 $(function(){
     var mySwiper = new Swiper ('.swiper-container', {
         loop: true,
@@ -42,3 +41,16 @@ $(function(){
         myScroll.scrollTo(0,0,500);
     })
 })
+$.ajax({
+	type:"get",
+	url:"/second/kede/service/goodsData.json",
+	async:true,
+	dataType:'json',
+	success:function(res){
+		var html = template("second_floor",res);
+		$(".invisible_glass_de").html(html);
+	},
+	error:function(err){
+		console.log(err);
+	}
+});

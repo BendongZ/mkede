@@ -3,10 +3,24 @@ $base-color:#888;
 a {
     color: #888888;
 }
+@import "../../lib/fragment/yo-dialog.scss";
+@import "../../lib/element/yo-loading";
+@import "../../lib/fragment/yo-toast";
 
+.loadcont{
+    position: absolute!important;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
 html {
     @include box-sizing(border-box);
     // font-family: 14px/1.5 Microsoft YaHei, arial, \5b8b\4f53;
+    color: #888;
+}
+.yo-modal{
+    @include flexbox();
 }
 
 body {
