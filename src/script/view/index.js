@@ -10,6 +10,7 @@ $('#header .header_search').css("display", "block");
 $('#header .header_other').css("display", "none");
 commonUtil.addLink();
 commonUtil.setActive();
+
 $(function(){
     var mySwiper = new Swiper ('.swiper-container', {
         loop: true,

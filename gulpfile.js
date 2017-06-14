@@ -12,7 +12,7 @@ var webpack = require('gulp-webpack');
 var named = require('vinyl-named');
 
 //引入gulp-sass的包
-var  sass = require('gulp-sass');
+var sass = require('gulp-sass');
 
 //版本号控制
 var rev = require('gulp-rev');
@@ -82,7 +82,7 @@ gulp.task('webserver',function(){
 			})
 		]
 
-	}))
+        }))
 })
 
 //观测文件的变化，然后去执行相应的任务

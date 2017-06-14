@@ -1,0 +1,29 @@
+<div class="m-index">
+	<div id="header_list_box"></div>
+	<section>
+		<div id="list_menu">
+			<ul id="god_menu">
+				<script id="godList" type="text/html">
+					{{if show}}
+					<div class="yo-modal">
+						<div class="cont">
+							<div class="yo-loading">
+								<i class="yo-ico"></i>
+								<div class="text">加载中...</div>
+							</div>
+						</div>
+					</div>
+					{{/if}} {{if !show}} {{each result}}
+					<li>
+						<a href="">
+							<img class="god_img" src="https://pic.keede.com/Main/{{$value.companyLogo}}" alt="">
+							<p class="god_name">{{$value.positionName}}</p>
+							<span class="god_price">{{$value.godPrice}}</span>
+						</a>
+					</li>
+					{{/each}} {{/if}}
+				</script>
+			</ul>
+		</div>
+	</section>
+</div>

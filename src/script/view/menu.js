@@ -6,6 +6,10 @@ var commonUtil = require('../utils/common.js');
 commonUtil.renderBody(menuTpl);
 commonUtil.render($('#header'),headerTpl);
 commonUtil.render($('#footer'),footerTpl);
+$('#header .header_search').css("display", "block");
+$('#header .header_other').css("display", "none");
+commonUtil.addLink();
+commonUtil.setActive();
 //ajax请求数据
 //https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png
 var isShow =true;
@@ -39,7 +43,7 @@ $.ajax({
 //          </li>';
 //             }
 //             $('.m-index section ul').html(str)
-            
+
 //                   //console.log(str);
 //         }
 //     })

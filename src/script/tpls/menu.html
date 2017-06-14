@@ -1,11 +1,11 @@
 <div class="m-index">
     <div id="header"></div>
     <section>
-   
-        <div id="menu"> 
-      
+
+        <div id="menu">
+
             <ul class="menu_list">
-                 <script type="text/html" id="menulist"> 
+                 <script type="text/html" id="menulist">
         {{if show}}
                     <div class="yo-modal">
                         <div class="cont">
@@ -15,22 +15,23 @@
                             </div>
                         </div>
                     </div>
-                    {{/if}} 
-                    {{if !show}} 
-                    
+                    {{/if}}
+                    {{if !show}}
+
                     {{each result}}
                     <li>
-                        <a href="">
+                        <a href="list.html">
                             <i><img src="https://pic.keede.com/Mobile/SystemImg/Class/{{$value.companyLogo}}" alt=""></i>
                             <p>{{$value.positionName}}</p>
                         </a>
                     </li>
-                    {{/each}}  {{/if}}  </script>             
+                    {{/each}}  {{/if}}
+                    </script>             
             </ul>
-           
+
 
         </div>
-      
+
     </section>
     <div id="footer"></div>
 </div>
