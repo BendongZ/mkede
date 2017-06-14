@@ -52,12 +52,7 @@
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */
-/***/ (function(module, exports) {
-
-	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
-
-/***/ }),
+/* 5 */,
 /* 6 */
 /***/ (function(module, exports) {
 
@@ -112,53 +107,55 @@
 
 	var headerlistTpl = __webpack_require__(9);
 	var menuTpl = __webpack_require__(10);
-	var footerTpl = __webpack_require__(5);
+	var footerTpl = __webpack_require__(11);
 	var commonUtil = __webpack_require__(6);
 
 	commonUtil.renderBody(menuTpl);
 	commonUtil.render($('#header_car_box'), headerlistTpl);
 	commonUtil.render($('#footer'), footerTpl);
 
-	//ajax请求数据
-	//https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png
-	// var isShow = true;
-	// var html = template('godList', { show: isShow });
-	// $('#god_menu').html(html);
-	// $.ajax({
-	//     url: './mock/godmore',
-	//     success: function(res) {
-	//         var dataSource = res.content.data.page; //去掉result
-	//         dataSource['show'] = !isShow;
-	//         var html = template('godList', dataSource) //dataSource对象
-	//         $('#god_menu').html(html)
-	//     }
-	// })
-	// var shang = true;
-	// $('.head_list_select li').each(function(index) {
-	//     $(this).on('click', function(e) {
-	//         e.preventDefault();
-	//         $(this).find('a').addClass('active').parent('li').siblings('li').find('a').removeClass('active');
+	//数量减少
+	  $('#god_menu li').each(function(value){
+	  //console.log($(this).find('.shu').text())
+	  $(this).find('.jian').on('click',function(e){
+	     e.preventDefault();
+	     var shu =parseInt($(this).next().text());
+	      shu--;
+	      $(this).next().text(shu)
+	      var danjia=parseInt($(this).parent().parent().parent().find('.price').text());
+	      var youhui =parseInt($(this).parent().parent().parent().find('.yh').text());
+	      var zongjia =(danjia+youhui)*shu;
+	     $('.m1').text(danjia*shu)
+	     $('.m2').text(zongjia)
+	     $('.m3').text(youhui)
+	     $('.m4').text(shu)
 
-	//     })
+	  if(parseInt($(this).next().text()) <= 0){
+	  $(this).next().text(0)
+	     $('.m1').text(0)
+	     $('.m2').text(0)
+	     $('.m3').text(0)
+	      $('.m4').text(0)
+	  }
 
-	// })
-	// $('.price').on('click', function() {
+	   })
+	  //数量增加
+	  $(this).find('.jia').on('click',function(e){
+	     e.preventDefault();
+	      // console.log($(this))
+	  var shu=parseInt($(this).prev().text());
+	  shu++;
+	  $(this).prev().text(shu)
+	  var danjia=parseInt($(this).parent().parent().parent().find('.price').text());
+	  var youhui =parseInt($(this).parent().parent().parent().find('.yh').text());
+	  var zongjia =(danjia+youhui)*shu;
+	 $('.m1').text(danjia*shu)
+	 $('.m2').text(zongjia)
+	 $('.m3').text(youhui)
+	  $('.m4').text(shu)
+	   })
+	})
 
-	//     if (shang) {
-	//         $('.sanjiao').css({
-
-	//             "transform": "rotate(180deg)"
-
-	//         })
-	//         shang = false
-	//     } else {
-	//         $('.sanjiao').css({
-	//             "transform": "rotate(0deg)"
-	//         })
-
-	//         shang = true
-	//     }
-	// })
 
 
 /***/ }),
@@ -171,7 +168,13 @@
 /* 10 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header_car_box\"></div>\r\n    <section>\r\n        <div id=\"list_car\">\r\n            <p class=\"youhui\">\r\n                <i>满减</i><span>6.18眼镜节满269减20、满369减30、满569减50 再买170.00元，即可参与满269.00减20.00</span>\r\n            </p>\r\n            <ul id=\"god_menu\">\r\n\r\n            </ul>\r\n        </div>\r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>";
+	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header_car_box\"></div>\r\n    <section>\r\n        <div id=\"list_car\">\r\n            <p class=\"youhui\">\r\n                <i>满减</i><span>6.18眼镜节满269减20、满369减30、满569减50 再买170.00元，即可参与满269.00减20.00</span>\r\n            </p>\r\n            <ul id=\"god_menu\">\r\n\r\n        <li>\r\n          <div class=\"god_top\">\r\n          <div class=\"god_img\">\r\n            <img src=\"https://pic.keede.com/MobileMain/53c107dd-f456-4383-8aa9-a5efb8ac83c7-150-150.jpg\" alt=\"\">\r\n            </div>\r\n        <div class=\"god_message\">\r\n          <h2>HAN MEGA-TR钛塑近视眼镜架-亮黑(HD3101-F02)(HAN 1.56非球面树脂镜片(1.553))</h2>\r\n        <div><p class=\"price\">89.00</p>\r\n        <p class=\"you\">已优惠<span class=\"yh\">50.00</span></p>\r\n        <p>右眼 光度:-1.50 散光:-1.00 轴位:13 瞳距:62</p>\r\n        <p>右眼 光度:-1.50 散光:-1.00 轴位:13 瞳距:62</p></div></div></div>\r\n        <div class=\"shuliang\">\r\n          <h3>数量</h3>\r\n          <p><span class=\"jian\">-</span><span class=\"shu\">15</span><span class=\"jia\">+</span></p>\r\n        </div>\r\n        </li>\r\n\r\n                    <li>\r\n                      <div class=\"god_top\">\r\n                      <div class=\"god_img\">\r\n                        <img src=\"https://pic.keede.com/MobileMain/53c107dd-f456-4383-8aa9-a5efb8ac83c7-150-150.jpg\" alt=\"\">\r\n                        </div>\r\n                    <div class=\"god_message\">\r\n                      <h2>HAN MEGA-TR钛塑近视眼镜架-亮黑(HD3101-F02)(HAN 1.56非球面树脂镜片(1.553))</h2>\r\n                    <div><p class=\"price\">89.00</p>\r\n                    <p class=\"you\">已优惠<span class=\"yh\">50.00</span></p>\r\n                    <p>右眼 光度:-1.50 散光:-1.00 轴位:13 瞳距:62</p>\r\n                    <p>右眼 光度:-1.50 散光:-1.00 轴位:13 瞳距:62</p></div></div></div>\r\n                    <div class=\"shuliang\">\r\n                      <h3>数量</h3>\r\n                      <p><span class=\"jian\">-</span><span class=\"shu\">15</span><span class=\"jia\">+</span></p>\r\n                    </div>\r\n                    </li>\r\n                            <li>\r\n                              <div class=\"god_top\">\r\n                              <div class=\"god_img\">\r\n                                <img src=\"https://pic.keede.com/MobileMain/53c107dd-f456-4383-8aa9-a5efb8ac83c7-150-150.jpg\" alt=\"\">\r\n                                </div>\r\n                            <div class=\"god_message\">\r\n                              <h2>HAN MEGA-TR钛塑近视眼镜架-亮黑(HD3101-F02)(HAN 1.56非球面树脂镜片(1.553))</h2>\r\n                            <div><p class=\"price\">89.00</p>\r\n                            <p class=\"you\">已优惠<span class=\"yh\">50.00</span></p>\r\n                            <p>右眼 光度:-1.50 散光:-1.00 轴位:13 瞳距:62</p>\r\n                            <p>右眼 光度:-1.50 散光:-1.00 轴位:13 瞳距:62</p></div></div></div>\r\n                            <div class=\"shuliang\">\r\n                              <h3>数量</h3>\r\n                              <p><span class=\"jian\">-</span><span class=\"shu\">15</span><span class=\"jia\">+</span></p>\r\n                            </div>\r\n                            </li>\r\n                                  \r\n            </ul>\r\n\r\n            <div class=\"quan\">\r\n              <h3>使用礼券</h3>\r\n              <p>选择券号</p>\r\n            </div>\r\n        </div>\r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>\r\n";
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+	module.exports = "<footer>\r\n\t\t<div class=\"jiesuan\">\r\n\t\t\t<div class=\"xq\">\r\n\t\t\t\t<p>合计<span class=\"m1\">99:00</span>(不含运费)</p>\r\n\t\t\t\t<p>总金额<span class=\"m2\">149:00</span>已优惠<span class=\"m3\">50:00</span></p>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"money\">结算<span class=\"m4\">3</span></div>\r\n\t\t</div>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ })
 /******/ ]);

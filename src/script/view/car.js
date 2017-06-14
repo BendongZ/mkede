@@ -1,49 +1,50 @@
 var headerlistTpl = require('../tpls/header-car.html');
 var menuTpl = require('../tpls/car.html');
-var footerTpl = require('../tpls/footer.html');
+var footerTpl = require('../tpls/footer-car.html');
 var commonUtil = require('../utils/common.js');
 
 commonUtil.renderBody(menuTpl);
 commonUtil.render($('#header_car_box'), headerlistTpl);
 commonUtil.render($('#footer'), footerTpl);
 
-//ajax请求数据
-//https://pic.keede.com/Mobile/SystemImg/Class/894fb563-fcf0-4bd9-b304-eed7f37eec8e.png
-// var isShow = true;
-// var html = template('godList', { show: isShow });
-// $('#god_menu').html(html);
-// $.ajax({
-//     url: './mock/godmore',
-//     success: function(res) {
-//         var dataSource = res.content.data.page; //去掉result
-//         dataSource['show'] = !isShow;
-//         var html = template('godList', dataSource) //dataSource对象
-//         $('#god_menu').html(html)
-//     }
-// })
-// var shang = true;
-// $('.head_list_select li').each(function(index) {
-//     $(this).on('click', function(e) {
-//         e.preventDefault();
-//         $(this).find('a').addClass('active').parent('li').siblings('li').find('a').removeClass('active');
+//数量减少
+  $('#god_menu li').each(function(value){
+  //console.log($(this).find('.shu').text())
+  $(this).find('.jian').on('click',function(e){
+     e.preventDefault();
+     var shu =parseInt($(this).next().text());
+      shu--;
+      $(this).next().text(shu)
+      var danjia=parseInt($(this).parent().parent().parent().find('.price').text());
+      var youhui =parseInt($(this).parent().parent().parent().find('.yh').text());
+      var zongjia =(danjia+youhui)*shu;
+     $('.m1').text(danjia*shu)
+     $('.m2').text(zongjia)
+     $('.m3').text(youhui)
+     $('.m4').text(shu)
 
-//     })
+  if(parseInt($(this).next().text()) <= 0){
+  $(this).next().text(0)
+     $('.m1').text(0)
+     $('.m2').text(0)
+     $('.m3').text(0)
+      $('.m4').text(0)
+  }
 
-// })
-// $('.price').on('click', function() {
-
-//     if (shang) {
-//         $('.sanjiao').css({
-
-//             "transform": "rotate(180deg)"
-
-//         })
-//         shang = false
-//     } else {
-//         $('.sanjiao').css({
-//             "transform": "rotate(0deg)"
-//         })
-
-//         shang = true
-//     }
-// })
+   })
+  //数量增加
+  $(this).find('.jia').on('click',function(e){
+     e.preventDefault();
+      // console.log($(this))
+  var shu=parseInt($(this).prev().text());
+  shu++;
+  $(this).prev().text(shu)
+  var danjia=parseInt($(this).parent().parent().parent().find('.price').text());
+  var youhui =parseInt($(this).parent().parent().parent().find('.yh').text());
+  var zongjia =(danjia+youhui)*shu;
+ $('.m1').text(danjia*shu)
+ $('.m2').text(zongjia)
+ $('.m3').text(youhui)
+  $('.m4').text(shu)
+   })
+})

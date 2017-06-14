@@ -44,7 +44,7 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(11);
+	module.exports = __webpack_require__(12);
 
 
 /***/ }),
@@ -60,7 +60,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
+	module.exports = "<footer>\r\n\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ }),
 /* 6 */
@@ -103,25 +103,26 @@
 /* 8 */,
 /* 9 */,
 /* 10 */,
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*** IMPORTS FROM imports-loader ***/
-
-
-	 var app = __webpack_require__(12);
-
-
-
-/***/ }),
+/* 11 */,
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*** IMPORTS FROM imports-loader ***/
 
 
+	 var app = __webpack_require__(13);
+
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/*** IMPORTS FROM imports-loader ***/
+
+
 	var headerTpl = __webpack_require__(3);
-	var menuTpl = __webpack_require__(13);
+	var menuTpl = __webpack_require__(14);
 	var footerTpl = __webpack_require__(5);
 	var commonUtil = __webpack_require__(6);
 
@@ -169,7 +170,7 @@
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header\"></div>\r\n    <section>\r\n\r\n        <div id=\"menu\">\r\n\r\n            <ul class=\"menu_list\">\r\n                 <script type=\"text/html\" id=\"menulist\">\r\n        {{if show}}\r\n                    <div class=\"yo-modal\">\r\n                        <div class=\"cont\">\r\n                            <div class=\"yo-loading\">\r\n                                <i class=\"yo-ico\"></i>\r\n                                <div class=\"text\">加载中...</div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    {{/if}}\r\n                    {{if !show}}\r\n\r\n                    {{each result}}\r\n                    <li>\r\n                        <a href=\"\">\r\n                            <i><img src=\"https://pic.keede.com/Mobile/SystemImg/Class/{{$value.companyLogo}}\" alt=\"\"></i>\r\n                            <p>{{$value.positionName}}</p>\r\n                        </a>\r\n                    </li>\r\n                    {{/each}}  {{/if}}\r\n                    </script>             \r\n            </ul>\r\n\r\n\r\n        </div>\r\n\r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>\r\n";

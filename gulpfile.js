@@ -49,8 +49,6 @@ gulp.task('webserver', function() {
         }))
 })
 
-
-
 //拷贝HTML页面
 gulp.task('copyhtml', function() {
     gulp.src('./src/*.html').pipe(gulp.dest('./build/'))
@@ -67,14 +65,14 @@ gulp.task('copy-img', function() {
 })
 
 //拷贝libs目录下的js
-gulp.task('copy-libs', function() {
+gulp.task('copylibs', function() {
     gulp.src('./src/script/libs/*').pipe(gulp.dest('./build/script/libs'))
 })
 
 //编译scss文件
 gulp.task('packcss', function() {
-    gulp.src(['./src/style/usage/module/*.scss', './src/style/usage/*.scss'])
-        .pipe(sass().on('error', sass.logError))
+    gulp.src(['./src/style/usage/module/app-car.scss','./src/style/usage/*.scss'])
+       .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./build/style'))
 })
 
@@ -106,12 +104,15 @@ gulp.task('packjs', function() {
     //观测文件的变化，然后去执行相应的任务
 gulp.task('watch', function() {
     gulp.watch('./src/*.html', ['copyhtml'])
+    gulp.watch('./src/script/libs/*.js', ['copylibs'])
+    gulp.watch('./src/style/swiper.min.css', ['copycss'])
     gulp.watch('./src/script/**/*.js', ['packjs'])
     gulp.watch('./src/script/**/*.html', ['packjs'])
-    gulp.watch('./src/style/usage/module/*.scss', ['packcss'])
-    gulp.watch('./src/style/usage/*.scss', ['packcss'])
+    gulp.watch(['./src/style/app-car.scss','./src/style/module/car.scss','./src/style/usage/*.scss'], ['packcss'])
     gulp.watch('./src/images/**/*', ['copy-img'])
 })
 
 //定义默认任务
-gulp.task('default', ['copyhtml', 'webserver', 'watch'], function() {})
+gulp.task('default', ['copyhtml', 'packjs',  'copycss', 'packcss',  'copy-img', 'copylibs', 'watch', 'webserver'], function() {
+  console.log("don---OK")
+})

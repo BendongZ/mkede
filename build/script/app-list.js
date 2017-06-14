@@ -44,7 +44,7 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(14);
+	module.exports = __webpack_require__(15);
 
 
 /***/ }),
@@ -55,7 +55,7 @@
 /* 5 */
 /***/ (function(module, exports) {
 
-	module.exports = "<footer>\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
+	module.exports = "<footer>\r\n\r\n\t<ul>\r\n\t\t<li><a href=\"index.html\" class=\"active\"><span class=\"yo-ico\">&#xe653;</span><span>首页</span></a></li>\r\n\t\t<li><a href=\"menu.html\"><span class=\"yo-ico\">&#xe644;</span><span>分类</span></a></li>\r\n\t\t<li><a href=\"###\"><i>0</i><span class=\"yo-ico car\">&#xe69d;</span><span>购物车</span></a></li>\r\n\t\t<li><a href=\"###\"><span class=\"yo-ico\">&#xe64f;</span><span>我的</span></a></li>\r\n\t</ul>\r\n</footer>\r\n";
 
 /***/ }),
 /* 6 */
@@ -101,24 +101,25 @@
 /* 11 */,
 /* 12 */,
 /* 13 */,
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*** IMPORTS FROM imports-loader ***/
-
-
-	var app = __webpack_require__(15);
-
-
-/***/ }),
+/* 14 */,
 /* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*** IMPORTS FROM imports-loader ***/
 
 
-	var headerlistTpl = __webpack_require__(16);
-	var menuTpl = __webpack_require__(17);
+	var app = __webpack_require__(16);
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/*** IMPORTS FROM imports-loader ***/
+
+
+	var headerlistTpl = __webpack_require__(17);
+	var menuTpl = __webpack_require__(18);
 	var footerTpl = __webpack_require__(5);
 	var commonUtil = __webpack_require__(6);
 
@@ -170,13 +171,13 @@
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 	module.exports = "<div id=\"header_list\">\r\n\t<div class=\"head_list_title\">\r\n\t\t<a href=\"\" class=\"back\"></a>\r\n\t\t<h1>彩色隐形眼镜</h1>\r\n\t\t<span class=\"shaixuan\"><a href=\"\">筛选</a></span>\r\n\t</div>\r\n\t<ul class=\"head_list_select\">\r\n\t\t<li class=\"active\"><a href=\"\">综合</a></li>\r\n\t\t<li><a href=\"\">销量</a></li>\r\n\t\t<li class=\"price\"><a href=\"\">价格<i class=\"sanjiao\"></i></a></li>\r\n\t</ul>\r\n</div>\r\n";
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"m-index\">\r\n    <div id=\"header_list_box\"></div>\r\n    <section>\r\n<div id=\"list_menu\">\r\n   <ul id =\"god_menu\">\r\n     <script  id=\"godList\" type=\"text/html\">\r\n           {{if show}}\r\n                       <div class=\"yo-modal\">\r\n                           <div class=\"cont\">\r\n                               <div class=\"yo-loading\">\r\n                                   <i class=\"yo-ico\"></i>\r\n                                   <div class=\"text\">加载中...</div>\r\n                               </div>\r\n                           </div>\r\n                       </div>\r\n            {{/if}}\r\n            {{if !show}}\r\n                {{each result}}\r\n                         <li>\r\n                           <a href=\"\">\r\n                             <img class=\"god_img\" src=\"https://pic.keede.com/Main/{{$value.companyLogo}}\" alt=\"\">\r\n                             <p class=\"god_name\">{{$value.positionName}}</p>\r\n                             <span class=\"god_price\">{{$value.godPrice}}</span>\r\n                            </a>\r\n                           </li>\r\n       {{/each}}\r\n\r\n        {{/if}}\r\n</script>\r\n     </ul>\r\n</div>\r\n    </section>\r\n    <div id=\"footer\"></div>\r\n</div>\r\n";

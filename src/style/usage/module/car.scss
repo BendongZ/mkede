@@ -1,20 +1,129 @@
 @charset "UTF-8";
 #list_car {
-    width: 100%;
-    height: 100%;
     overflow-y: scroll;
+@include border(0 0 10px 0,#ccc)
     .youhui {
-        font-size: .16rem;
-        color: #888;
-        line-height: .25rem;
+        height: 100%;
+    width: 100%;
+    font-size: .16rem;
+    color: #888;
+    line-height: .25rem;
+    position: relative;
+    padding: 0.2rem;
+    @include border(0 0 1px 0)
         i {
             display: inline-block;
-            padding: 0 0.15rem;
+            padding: 0 0.1rem;
             background: #ff7c7c;
-            @include border-radius(0.15rem);
+            color:#fff;
+            margin-right:0.1rem;
+         @include border-radius(.15rem);
         }
     }
-    ul {
+    #god_menu {
         width: 100%;
+        padding:.2rem;
+        // @include border(0 0 10px 0,#ccc)
+        li{
+          .god_top{
+            @include flexbox();
+                    .god_img{
+                          width: 1rem;
+              height: 1rem;
+              border: 1px solid #ccc;
+              float: left;
+              margin: 0.1rem;
+              img{width:100%;
+              }
+                    }
+                    .god_message{
+                      @include flex(1);
+                      padding:.1rem 0;
+                      color: #888888;
+                      h2{
+                          cursor: pointer;
+              font-size: .14rem;
+              height: .36rem;
+              overflow: hidden;
+              margin-bottom: .15rem;
+
+                      }
+                      p{
+                        font-size:.12rem;
+                        float:right;
+                      }
+                      .price{
+                        font-weight:700;
+                        font-size:.14rem;
+                        color:#000;
+                        text-align:right;
+          width:100%;
+                      }
+                      .you{
+                          display:inline-block;
+                        text-align:right;
+                        color: #ff7c7c;
+              padding: 0 0.02rem;
+              font-size: .12rem;
+              @include border(1px, #ff7c7c);
+                      }
+                    }
+          }
+
+        }
+    }
+    .quan{
+      width:100%;
+      padding:.2rem;
+        @include border(0 0 10px 0,#ccc)
+    h3{
+      color:#333;
+      text-align:left;
+      height:.3rem;
+      line-height:.3rem;
+    }
+    p{
+      width:100%;
+      height:.34rem;
+      line-height:.14rem;
+      @include border(1px,#ccc);
+      @include border-radius(8px);
+      margin:.1rem auto;
+
+      text-align:center;
+      padding:.1rem;
+      color:#888
+    }
+    }
+    .shuliang{
+      width:100%;
+      padding:0 .2rem .2rem .2rem;
+        @include border(0 0 10px 0,#ccc)
+      h3{
+        color:#000;
+        text-align:left;
+      }
+      p{
+        height:.4rem;
+        line-height:.4rem;
+        margin-top:.2rem;
+        span{
+        display: inline-block;
+    float: left;
+    margin: 0 0.05rem;
+    position: relative;
+    width: .3rem;
+    height: .3rem;
+    line-height: .3rem;
+@include border(1px,#ccc)
+    text-align: center;
+    font-size: .18rem;
+
+
+        }
+        .shu{
+          width:.5rem;
+        }
+      }
     }
 }
