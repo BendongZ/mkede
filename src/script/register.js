@@ -1,0 +1,1 @@
+var login = require('./view/register-js.js');

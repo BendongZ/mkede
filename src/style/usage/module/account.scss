@@ -1,0 +1,179 @@
+@charset "utf-8";
+.m-index {
+    section {
+        overflow: hidden;
+        .banner {
+            width: 100%;
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .centerinfo{
+                position: absolute;
+                width: 100%;
+                padding-top: 17%;
+                top: 0;
+                text-align: center;
+                .userimg{
+                    border:3px #cccccc solid;
+                    @include border-radius(50%);
+                    display: block;
+                    margin: 0 auto;
+                    width: 20%;
+                    min-width: .64rem;
+                    max-width: 1.21rem;
+                    overflow: hidden;
+                    margin: 0 auto;
+                }
+                p{
+                    text-align: center;
+                    line-height: .3rem;
+                    color: #000;
+                    font-size: .15rem;
+                }
+                .userlevel{
+                    text-align: center;
+                    background: #ffffff;
+                    line-height: .22rem;
+                    border-radius: .14rem;
+                    padding: 0 .14rem;
+                    display: inline-block;
+                    font-size: .14rem;
+                    color: #FFA926;
+                }
+            }
+        }
+        #middle{
+            .center_nav{
+                margin: .1rem .1rem 0 .1rem;
+                position: relative;
+                ul{
+                    overflow: hidden;
+                    li{
+                        float: left;
+                        width: 25%;
+                        padding-top: .04rem;
+                        display: inline-block;
+                        text-align: center;
+                        position: relative;
+                        a{
+                            position: relative;
+                            width: 100%;
+                            padding-top: .25rem;
+                            display: block;
+                            color: #000;
+                            &:after{
+                                position: absolute;
+                                content: "";
+                                top: 0;
+                                left: 50%;
+                                margin-left: -.1rem;
+                                height: .24rem;
+                                width: .26rem;
+                                display: block;
+                                background: url('/images/icon_account.png') no-repeat;
+                                background-size: .64rem auto;
+                            }
+                        }
+                        &:nth-of-type(1){
+                            a{
+                                &:after{
+                                    background-position: 0 0;
+                                }
+                            }
+                        }
+                        &:nth-of-type(2){
+                            a{
+                                &:after{
+                                    background-position: 0 -.24rem;
+                                }
+                            }
+                        }
+                        &:nth-of-type(3){
+                            a{
+                                &:after{
+                                    background-position: 0 -.48rem;
+                                }
+                            }
+                        }
+                        &:nth-of-type(4){
+                            a{
+                                &:after{
+                                    background-position: 0 -.72rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .line{
+                margin-top: .1rem;
+                @include border(0 0 1px 0,#dcdcdc);
+            }
+            .center_menu_nav{
+                overflow: hidden;
+                font-size: .16rem;
+                padding-bottom: .3rem;
+                ul{
+                    li{
+                       @include border(0 0 1px 0,#dcdcdc); 
+                       position: relative;
+                       line-height: .6rem;
+                       a{
+                           display: block;
+                           .nav_link{
+                                width: .4rem;
+                                height: .4rem;
+                                text-align: center;
+                                display: inline-block;
+                                background: url('../images/icon_account.png') repeat scroll 0 -1.21rem;
+                                background-size: .64rem auto;
+                                vertical-align: middle;
+                                margin: 0 .1rem;
+                                background-repeat: no-repeat;
+                           }
+                           .wallet_icon{
+                               background-position: 0 -1.61rem;
+                           }
+                           .collect_icon{
+                               background-position: 0 -2.01rem;
+                           }
+                           .security{
+                               background-position: 0 -6.74rem;
+                           }
+                           .feedback{
+                               background-position: 0 -6.35rem;
+                           }
+                           .about_icon{
+                               background-position: 0 -3.20rem;
+                           }
+                           .title{
+                               color: #000;
+                           }
+                           .nav_r{
+                             margin-right: .1rem;
+                             float: right;
+                             font-size: .14rem;
+                             color: #888;  
+                             b{
+                                background-image: url('../images/icon_jt_rt.png');
+                                background-position: 0 0;
+                                background-size: 8px auto;
+                                display: inline-block;
+                                height: 14px;
+                                width: 8px;
+                                vertical-align: sub;
+                                margin-left: .1rem;
+                             }
+                           }
+                       }
+                    }
+                    h3{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        
+    }
+}
