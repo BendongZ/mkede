@@ -60,21 +60,21 @@ gulp.task('webserver',function(){
 				}
 			}),
 			proxy('/zhuce',{
-				target:'http://10.9.166.125/',//找数据地址
+				target:'http://localhost:8000/',//找数据地址
 				changeOrigin:true,//切换域名也能识别
 				pathRewrite:{//去掉mock
 					'^/zhuce':''
 				}
 			}),
 			proxy('/verify',{
-				target:'http://10.9.166.125/',//找数据地址
+				target:'http://localhost:8000/',//找数据地址
 				changeOrigin:true,//切换域名也能识别
 				pathRewrite:{//去掉mock
 					'^/verify':''
 				}
 			}),
 			proxy('/second',{
-				target:'http://10.9.166.125/',//找数据地址
+				target:'http://localhost:8000/',//找数据地址
 				changeOrigin:true,//切换域名也能识别
 				pathRewrite:{//去掉mock
 					'^/second':''
